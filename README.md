@@ -38,3 +38,15 @@ $ curl -s http://127.0.0.1:3000/ping | python -m json.tool
     "pong": "Hello, World!"
 }
 ``` 
+
+项目构建: 
+
+```bash
+$ sam build 
+```
+
+项目部署: 
+
+```bash
+$ sam deploy --guided
+```
