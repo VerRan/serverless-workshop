@@ -1,7 +1,7 @@
 # Serverless enablement workshop Demo
 
-* 该项目采用java语言实现lambda的编写，同时使用[sparkjava](http://sparkjava.com/)
-* 实现 web应用的开发，使用Cognito的用户池实现用户注册与管理，通过身份池实现AWS资源访问权限控制
+* 该项目采用java语言实现lambda的编写，同时使用[sparkjava](http://sparkjava.com/)实现 web应用的开发
+* 使用Cognito的用户池实现用户注册与管理，通过身份池实现AWS资源访问权限控制
 * 数据持久化到DyanmoDB中，同时使用DynamoDBMapper实现数据持久化操作。 
 
 ## 系统架构图
