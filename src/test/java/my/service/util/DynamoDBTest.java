@@ -9,7 +9,7 @@ import org.junit.runners.MethodSorters;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DynamoDBTest {
 
-    @Test
+//    @Test
     public  void  testA_cleanData(){
 
         DynamoDBUtil dynamoDBUtil = new DynamoDBUtil();

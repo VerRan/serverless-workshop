@@ -10,12 +10,19 @@
 
 </head>
 <script>
+$(document).ready(function(){
+    <!--jQuery.support.cors = true;-->
+    $.get("https://vvc4wtxin3.execute-api.ap-northeast-1.amazonaws.com/Prod/ping",function(data,status){
+         alert("Data: " + data + "nStatus: " + status);
+        $(`#content`).attr(`value`,data);
+    });
+});
+
 </script>
 <body>
 <h5 class="card-title">Preview</h5>
 <div>
-    Hello  Spark Java
-    <img src="/Users/lht/microservice/sharp-test/new-file.new-file.jpg">
+    <input type="text" id="content"  />
 </div><br>
 </body>
 </html>

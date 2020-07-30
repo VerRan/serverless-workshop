@@ -11,28 +11,28 @@ import org.junit.runners.MethodSorters;
 public class CognitoTest {
 
     CognitoHelper cognitoHelper =new CognitoHelper();
-    @Test
+//    @Test
     public void  testA_cleanData(){
-        cognitoHelper.DeleteUser("lht123");
+        cognitoHelper.DeleteUser("lht123456");
         System.out.println("ok");
     }
 
-    @Test
+//    @Test
     public void testB_SignUp(){
-        boolean ret = cognitoHelper.SignUpUser("lht123","Dove1985*",
-                "liu_ht@126.com","");
+        boolean ret = cognitoHelper.SignUpUser("lht","Dove1985*",
+                "lht@amazon.com","");
         Assert.assertEquals(true,ret);
     }
 
 //    @Test
     public void testC_VerifyCode(){
         CognitoHelper cognitoHelper =new CognitoHelper();
-        boolean ret = cognitoHelper.VerifyAccessCode("lht","160782");
+        boolean ret = cognitoHelper.VerifyAccessCode("lht","968904");
         Assert.assertEquals(true,ret);
     }
 
 
-    @Test
+//    @Test
     public void testD_SignIn(){
         CognitoHelper cognitoHelper =new CognitoHelper();
         String ret = cognitoHelper.ValidateUser("lht","Dove1985*");

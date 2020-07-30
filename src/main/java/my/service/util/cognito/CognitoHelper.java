@@ -118,6 +118,7 @@ public class CognitoHelper {
             SignUpResult result = cognitoIdentityProvider.signUp(signUpRequest);
             System.out.println(result);
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println(e);
             return false;
         }

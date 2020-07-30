@@ -4,20 +4,23 @@ Description: AWS Serverless Spark API - my.service::my-service
 Globals:
   Api:
     EndpointConfiguration: REGIONAL
-
+    # Allows an application running locally on port 8080 to call this API
+    Cors:
+      AllowMethods: "'OPTIONS,POST,GET'"
+      AllowHeaders: "'Content-Type'"
+      AllowOrigin: "'http://localhost:63342'"
 Resources:
-  MyServiceFunction:
+  ServerlessWorkshopBakendFunction:
     Type: AWS::Serverless::Function
     Properties:
       Handler: my.service.App::handleRequest
       Runtime: java8
-      CodeUri: target/my-service-1.0-SNAPSHOT-lambda-package.zip
       MemorySize: 512
 #      Policies: AWSLambdaBasicExecutionRole
       Policies:
         # Give S3 Full Access to your Lambda Function
 #        - AmazonS3FullAccess
-        - AmazonDynamoDBFullAccess
+         - AmazonDynamoDBFullAccess
       Timeout: 40
       Events:
         GetResource:
@@ -27,8 +30,8 @@ Resources:
             Method: any
 
 Outputs:
-  MyServiceApi:
+  ServerlessWorkshopBakendApi:
     Description: URL for application
     Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/ping'
     Export:
-      Name: MyServiceApi
+      Name: ServerlessWorkshopBakendApi

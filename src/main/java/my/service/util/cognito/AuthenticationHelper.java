@@ -188,11 +188,11 @@ class AuthenticationHelper {
             if (ChallengeNameType.PASSWORD_VERIFIER.toString().equals(initiateAuthResult.getChallengeName())) {
                 RespondToAuthChallengeRequest challengeRequest = userSrpAuthRequest(initiateAuthResult, password);
                 RespondToAuthChallengeResult result = cognitoIdentityProvider.respondToAuthChallenge(challengeRequest);
-                //System.out.println(result);
-                System.out.println(CognitoJWTParser.getPayload(result.getAuthenticationResult().getIdToken()));
+//                System.out.println("id token is "+result.getAuthenticationResult().getIdToken());
+//                System.out.println(CognitoJWTParser.getPayload(result.getAuthenticationResult().getIdToken()));
                 authresult = result.getAuthenticationResult().getIdToken();
-              String  accesToken = result.getAuthenticationResult().getAccessToken();
-              System.out.println(accesToken);
+//              String  accesToken = result.getAuthenticationResult().getAccessToken();
+//              System.out.println("acccessToken is "+ accesToken);
             }
         } catch (final Exception ex) {
             System.out.println("Exception" + ex);
